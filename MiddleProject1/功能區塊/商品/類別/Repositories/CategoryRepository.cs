@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows;
 using MiddleProject1.功能區塊.商品.類別.Repositories;
 
 namespace MiddleProject1.功能區塊.商品.類別.Repositories
@@ -67,8 +68,23 @@ namespace MiddleProject1.功能區塊.商品.類別.Repositories
                 string sql = "DELETE FROM ShopCategories WHERE CategoryID = @ID";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@ID", id);
-                conn.Open();
-                return cmd.ExecuteNonQuery() > 0;
+
+                try
+                {
+                    conn.Open();
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+                catch (SqlException ex)
+                {
+                    if (ex.Number == 547) // 外鍵限制錯誤
+                    {
+                        //throw new Exception("無法刪除該分類，因為仍有商品屬於此分類。請先移除或修改這些商品。");
+                        MessageBox.Show("無法刪除該分類，因為仍有商品屬於此分類。請先移除或修改這些商品。");
+                    }
+
+                    throw new Exception("刪除類別時發生錯誤：" + ex.Message);
+                    //MessageBox.Show("刪除類別時發生錯誤：" + ex.Message);
+                }
             }
         }
     }
