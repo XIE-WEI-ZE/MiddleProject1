@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="MiddleProject1.功能區塊.會員" targetNamespace="http://tempuri.org/NursingHomeDataSet2.xsd" xmlns:mstns="http://tempuri.org/NursingHomeDataSet2.xsd" xmlns="http://tempuri.org/NursingHomeDataSet2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="NursingHomeConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="NursingHomeConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MiddleProject1.Properties.Settings.GlobalReference.Default.NursingHomeConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DailyHealthRecordTableAdapter" GeneratorDataComponentClassName="DailyHealthRecordTableAdapter" Name="DailyHealthRecord" UserDataComponentName="DailyHealthRecordTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NursingHomeConnectionString (Settings)" DbObjectName="NursingHome.dbo.DailyHealthRecord" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Name, RecordDate, BodyTemperature, BloodPressure, Pulse, Remark, CreatedDate, IORecord, CheckPeriod FROM dbo.DailyHealthRecord</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="RecordDate" DataSetColumn="RecordDate" />
+              <Mapping SourceColumn="BodyTemperature" DataSetColumn="BodyTemperature" />
+              <Mapping SourceColumn="BloodPressure" DataSetColumn="BloodPressure" />
+              <Mapping SourceColumn="Pulse" DataSetColumn="Pulse" />
+              <Mapping SourceColumn="Remark" DataSetColumn="Remark" />
+              <Mapping SourceColumn="CreatedDate" DataSetColumn="CreatedDate" />
+              <Mapping SourceColumn="IORecord" DataSetColumn="IORecord" />
+              <Mapping SourceColumn="CheckPeriod" DataSetColumn="CheckPeriod" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="MiddleProject1.功能區塊.會員" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="MiddleProject1.功能區塊.會員" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="_MiddleProject1_功能區塊_會員">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DailyHealthRecord" msprop:Generator_RowClassName="DailyHealthRecordRow" msprop:Generator_RowEvHandlerName="DailyHealthRecordRowChangeEventHandler" msprop:Generator_RowDeletedName="DailyHealthRecordRowDeleted" msprop:Generator_RowDeletingName="DailyHealthRecordRowDeleting" msprop:Generator_RowEvArgName="DailyHealthRecordRowChangeEvent" msprop:Generator_TablePropName="DailyHealthRecord" msprop:Generator_RowChangedName="DailyHealthRecordRowChanged" msprop:Generator_UserTableName="DailyHealthRecord" msprop:Generator_RowChangingName="DailyHealthRecordRowChanging" msprop:Generator_TableClassName="DailyHealthRecordDataTable" msprop:Generator_TableVarName="tableDailyHealthRecord">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" msprop:Generator_UserColumnName="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnVarNameInTable="columnName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RecordDate" msprop:Generator_UserColumnName="RecordDate" msprop:Generator_ColumnPropNameInTable="RecordDateColumn" msprop:Generator_ColumnPropNameInRow="RecordDate" msprop:Generator_ColumnVarNameInTable="columnRecordDate" type="xs:dateTime" />
+              <xs:element name="BodyTemperature" msprop:Generator_UserColumnName="BodyTemperature" msprop:Generator_ColumnPropNameInTable="BodyTemperatureColumn" msprop:Generator_ColumnPropNameInRow="BodyTemperature" msprop:Generator_ColumnVarNameInTable="columnBodyTemperature" type="xs:decimal" />
+              <xs:element name="BloodPressure" msprop:Generator_UserColumnName="BloodPressure" msprop:Generator_ColumnPropNameInTable="BloodPressureColumn" msprop:Generator_ColumnPropNameInRow="BloodPressure" msprop:Generator_ColumnVarNameInTable="columnBloodPressure" type="xs:int" />
+              <xs:element name="Pulse" msprop:Generator_UserColumnName="Pulse" msprop:Generator_ColumnPropNameInTable="PulseColumn" msprop:Generator_ColumnPropNameInRow="Pulse" msprop:Generator_ColumnVarNameInTable="columnPulse" type="xs:int" />
+              <xs:element name="Remark" msprop:Generator_UserColumnName="Remark" msprop:Generator_ColumnPropNameInTable="RemarkColumn" msprop:Generator_ColumnPropNameInRow="Remark" msprop:Generator_ColumnVarNameInTable="columnRemark" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreatedDate" msprop:Generator_UserColumnName="CreatedDate" msprop:Generator_ColumnPropNameInTable="CreatedDateColumn" msprop:Generator_ColumnPropNameInRow="CreatedDate" msprop:Generator_ColumnVarNameInTable="columnCreatedDate" type="xs:dateTime" />
+              <xs:element name="IORecord" msprop:Generator_UserColumnName="IORecord" msprop:Generator_ColumnPropNameInTable="IORecordColumn" msprop:Generator_ColumnPropNameInRow="IORecord" msprop:Generator_ColumnVarNameInTable="columnIORecord" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CheckPeriod" msprop:Generator_UserColumnName="CheckPeriod" msprop:Generator_ColumnPropNameInTable="CheckPeriodColumn" msprop:Generator_ColumnPropNameInRow="CheckPeriod" msprop:Generator_ColumnVarNameInTable="columnCheckPeriod" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
