@@ -1,8 +1,8 @@
-﻿using System;
+﻿using MiddleProject1.功能區塊.商品.類別.Repositories;
+using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Windows;
-using MiddleProject1.功能區塊.商品.類別.Repositories;
+using System.Windows.Forms;
 
 namespace MiddleProject1.功能區塊.商品.類別.Repositories
 {
@@ -72,20 +72,29 @@ namespace MiddleProject1.功能區塊.商品.類別.Repositories
                 try
                 {
                     conn.Open();
-                    return cmd.ExecuteNonQuery() > 0;
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
                 }
                 catch (SqlException ex)
                 {
                     if (ex.Number == 547) // 外鍵限制錯誤
                     {
-                        //throw new Exception("無法刪除該分類，因為仍有商品屬於此分類。請先移除或修改這些商品。");
-                        MessageBox.Show("無法刪除該分類，因為仍有商品屬於此分類。請先移除或修改這些商品。");
+                        MessageBox.Show("無法刪除該分類，因為仍有商品屬於此分類。請先移除或修改這些商品。", "刪除失敗", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        MessageBox.Show("刪除類別時發生錯誤：" + ex.Message, "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
-                    throw new Exception("刪除類別時發生錯誤：" + ex.Message);
-                    //MessageBox.Show("刪除類別時發生錯誤：" + ex.Message);
+                    return false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("系統發生非預期錯誤：" + ex.Message, "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
                 }
             }
         }
+
     }
 }
